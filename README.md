@@ -1,30 +1,54 @@
-🚀 Como Rodar o Projeto Localmente
+## 🚀 **Como Rodar o Projeto Localmente**
+### **1️⃣ Clonar o Repositório**
 
-2️⃣ Configurar o Ambiente Garanta que você tem o Java 17+ e o Maven instalados. Se precisar instalar o Maven, siga a documentação oficial.
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+cd nome-do-repositorio
 
-3️⃣ Rodar o Projeto Para iniciar o servidor, execute:
+### **2️⃣ Configurar o Ambiente**
+Garanta que você tem o Java 17+ e o Maven instalados.
+Se precisar instalar o Maven, siga a documentação oficial.
 
-mvn spring-boot:run A aplicação será iniciada em http://localhost:8080 🚀
+### **3️⃣ Rodar o Projeto**
+Para iniciar o servidor, execute:
 
-🛠️ Endpoints da API Aqui estão os principais endpoints da API e como testá-los no Postman ou cURL.
+mvn spring-boot:run
+A aplicação será iniciada em http://localhost:8080 🚀
 
-🔹 1. Listar Todos os Pedidos 📌 GET /pedidos
+🛠️ Endpoints da API
+Aqui estão os principais endpoints da API e como testá-los no Postman ou cURL.
 
-curl -X GET http://localhost:8080/pedidos 🔹 2. Buscar Produto por ID 📌 GET /pedidos/{id} curl -X GET http://localhost:8080/pedidos/1
+#### 🔹 1. Listar Todos os Pedidos
 
-🔹 3. Criar um Novo Produto 📌 POST /pedidos 📌 Body (JSON): { "clienteNome": "Teclado Gamer", "valorTotal": 250.0 } curl -X POST http://localhost:8080/pedidos -H "Content-Type: application/json" -d '{"clienteNome": "Teclado Gamer", "valorTotal": 250.0}'
+📌 GET /pedidos
 
-🔹 4. Atualizar um Produto 📌 PUT /pedidos/{id} 📌 Body (JSON):
+    curl -X GET http://localhost:8080/pedidos
 
-{ "clienteNome": "Teclado Mecânico RGB", "valorTotal": 300.0 }
+#### 🔹 2. Buscar Pedido por ID
+📌 GET /pedidos/{id}
 
-curl -X PUT http://localhost:8080/pedidos/1 -H "Content-Type: application/json" -d '{"clienteNome": "Teclado Mecânico RGB", "valorTotal": 300.0}'
+    curl -X GET http://localhost:8080/pedidos/1
 
-🔹 5. Excluir um Produto 📌 DELETE /pedidos/{id}
+#### 🔹 3. Criar um Novo Pedido
+📌 POST /pedidos
 
-curl -X DELETE http://localhost:8080/pedidos/1
+📌 Body (JSON): { "clienteNome": "Cleberson", "valorTotal": 250.0 }
 
-🗄️ Acessar o Banco de Dados H2 O projeto usa H2 Database para armazenar os dados temporariamente. Para acessar o banco:
+    curl -X POST http://localhost:8080/pedidos -H "Content-Type: application/json" -d '{"clienteNome": "Cleberson", "valorTotal": 250.0}'
+
+#### 🔹 4. Atualizar um Pedido
+📌 PUT /pedidos/{id}
+
+📌 Body (JSON): { "clienteNome": "Cleberson", "valorTotal": 300.0 }
+
+    curl -X PUT http://localhost:8080/pedidos/1 -H "Content-Type: application/json" -d '{"clienteNome": "Cleberson", "valorTotal": 300.0}'
+
+#### 🔹 5. Excluir um Pedido
+📌 DELETE /pedidos/{id}
+
+    curl -X DELETE http://localhost:8080/pedidos/1
+
+### **🗄️ Acessar o Banco de Dados**
+H2 O projeto usa H2 Database para armazenar os dados temporariamente. Para acessar o banco:
 
 Inicie a aplicação (mvn spring-boot:run).
 
@@ -38,24 +62,23 @@ JDBC URL: jdbc:h2:mem:testdb Usuário: sa Senha: (deixe em branco) Execute a con
 
 SELECT * FROM pedidos; 👨‍🏫 Sobre o Projeto Este projeto faz parte das aulas de SOA e Web Services da FIAP e tem como objetivo ensinar os alunos a criar e consumir APIs REST com Spring Boot.
 
-# listagem dos pedidos 
+# Listagem dos pedidos 
 
-![Listagem dos Pedidos](.img\list.png)
+![Listagem dos Pedidos](img/list.png)
 
 # Adicionar pedidos
 
-![Adicionar Pedidos](img\add.png)
+![Adicionar Pedidos](img/add.png)
 
 # Pegar um pedido
 
-![Pegar 1 Pedidos](img\get1.png)
+![Pegar 1 Pedidos](img/get1.png)
 
-# Update um pedido
+# Atualizar um pedido
 
-![Atualizar 1 pedido](img\update.png)
+![Atualizar 1 pedido](img/update.png)
 
 # Deletar um pedido
 
-![Deletar 1 pedido](img\delete.png)
-
-
+![Deletar 1 pedido](img/delete.png)
+ 
